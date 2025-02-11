@@ -1,9 +1,9 @@
-<?php
+ <?php
 
-$dbhost="localhost";
-$dbuser="nicolaaliuni";
+$dbhost=" ";
+$dbuser=" ";
 $dbpassword="";
-$dbname="my_nicolaaliuni";
+$dbname=" ";
 $conn=mysqli_connect($dbhost,$dbuser,$dbpassword) or 
 die("connessione fallita");
 mysqli_select_db($conn,$dbname) or
