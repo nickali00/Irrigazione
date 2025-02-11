@@ -17,14 +17,11 @@ NTPClient timeClient(ntpUDP, "pool.ntp.org", utcOffsetInSeconds);
 
 
 // Imposta le tue credenziali WiFi
-//const char* ssid = "Galaxy";
-const char* password = "s6d6d252";
-const char* ssid = "r_studio";
-//const char* ssid = "Repeater_2.4G_EABE02";
-//const char* ssid = "Extender_studio";
-//const char* password = "12345678";
-const char* jsonUrl = "http://nicolaaliuni.altervista.org/irrigazione/apistato.php";
-const char* jsonUrlPID = "http://nicolaaliuni.altervista.org/irrigazione/apipid.php";
+const char* password = " ";
+const char* ssid = " ";
+
+const char* jsonUrl = "http://DOMINIO/irrigazione/apistato.php";
+const char* jsonUrlPID = "http://DOMINIO/irrigazione/apipid.php";
 
 
 // Variabili per il controllo PID
@@ -232,7 +229,7 @@ void caricaDati() {
   HTTPClient http;
 
   // URL della richiesta
-  String url = "http://nicolaaliuni.altervista.org/irrigazione/inseriscidati.php";
+  String url = "http://DOMINIO/irrigazione/inseriscidati.php";
 
   // Esecuzione della richiesta POST
   http.begin(url);
@@ -261,7 +258,7 @@ void caricaPID() {
   HTTPClient http;
 
   // URL della richiesta
-  String urlpid = "http://nicolaaliuni.altervista.org/irrigazione/Inseriscovaloripid.php";
+  String urlpid = "http://DOMINIO/irrigazione/Inseriscovaloripid.php";
 
   // Esecuzione della richiesta POST
   http.begin(urlpid);
