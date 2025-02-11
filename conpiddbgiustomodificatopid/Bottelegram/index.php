@@ -1,16 +1,16 @@
 <?php
 /*
 creare bot telegram botfather creare webook
-https://api.telegram.org/bot7288651560:AAGZO2j_k7Ad7VRvVhbWNDjoxijZZiHGq7w/setWebHook?url=https://nicolaaliuni.altervista.org/irrigazione/index.php
+https://api.telegram.org/botCHIAVEBOT/setWebHook?url=https://DOMINIO/irrigazione/index.php
 
 */
-define('DB_HOST', 'localhost'); // Inserisci qui l'host del tuo database
-define('DB_USER', 'nicolaaliuni'); // Inserisci qui l'utente del tuo database
-define('DB_PASSWORD', ''); // Inserisci qui la password del tuo database
-define('DB_NAME', 'my_nicolaaliuni'); // Inserisci qui il nome del tuo database
+define('DB_HOST', ' '); // Inserisci qui l'host del tuo database
+define('DB_USER', ' '); // Inserisci qui l'utente del tuo database
+define('DB_PASSWORD', ' '); // Inserisci qui la password del tuo database
+define('DB_NAME', ' '); // Inserisci qui il nome del tuo database
 ini_set('max_execution_time', 260);
 
-$botToken = "7288651560:AAGZO2j_k7Ad7VRvVhbWNDjoxijZZiHGq7w";
+$botToken = "CHIAVE BOT";
 $website = "https://api.telegram.org/bot".$botToken;
 //GetUpdate
 $update = file_get_contents('php://input');
@@ -131,17 +131,17 @@ if (isset($update["callback_query"])) {
     case 'On':
     //inizio irrigazione
     InviaMessaggio($chatId,"inizio irrigazione");
-     file_get_contents("https://nicolaaliuni.altervista.org/irrigazione/irriga.php");
+     file_get_contents("https://DOMINIO/irrigazione/irriga.php");
     break;
     case 'Off':
     //fine irrigazione
     InviaMessaggio($chatId,"fine irrigazione");
-     file_get_contents("https://nicolaaliuni.altervista.org/irrigazione/fine.php");
+     file_get_contents("https://DOMINIO/irrigazione/fine.php");
     break;
     case 'Leggi':
-    file_get_contents("https://nicolaaliuni.altervista.org/irrigazione/leggidati.php");
+    file_get_contents("https://DOMINIO/irrigazione/leggidati.php");
     sleep(15);
-    $json = file_get_contents("http://nicolaaliuni.altervista.org/irrigazione/apiumidita.php");
+    $json = file_get_contents("http://DOMINIO/irrigazione/apiumidita.php");
     $data = json_decode($json, true);
     InviaMessaggio($chatId,"umidità terreno:".$data['valore']);
     break;
@@ -174,18 +174,18 @@ if (isset($update["callback_query"])) {
      case 'confermapid':
     //metto lo stato a 3
     InviaMessaggio($chatId,"valori PID modificati");
-     file_get_contents("https://nicolaaliuni.altervista.org/irrigazione/modificapid.php");
+     file_get_contents("https://DOMINIO/irrigazione/modificapid.php");
     break;
      case 'eliminapid':
     //puliscovaloridb
     InviaMessaggio($chatId,"valori PID inizializzati");
-     file_get_contents("https://nicolaaliuni.altervista.org/irrigazione/eliminavaloripid.php");
+     file_get_contents("https://DOMINIO/irrigazione/eliminavaloripid.php");
     
     break;
     case 'grafico':
-    $appID = "GTPRLK-K7459WUEE9";//apiwolframalpha
+    $appID = "CHIAVE API WOLFRAMALPHA";//apiwolframalpha
     // URL from which to fetch the JSON data
-    $url = "https://nicolaaliuni.altervista.org/irrigazione/apipidvalori.php";
+    $url = "https://DOMINIO/irrigazione/apipidvalori.php";
 
     // Fetch the JSON data from the URL
     $json_data = file_get_contents($url);
@@ -219,8 +219,8 @@ if (isset($update["callback_query"])) {
     InviaFoto($chatId,$url);
     break;
     case 'umidita':
- 	$appID = "GTPRLK-K7459WUEE9";
-    $url = "https://nicolaaliuni.altervista.org/irrigazione/apivaloriumidit.php";
+ 	$appID = "CHIAVE API WOLFRAMALPHA";
+    $url = "https://DOMINIO/irrigazione/apivaloriumidit.php";
 
     // Fetch the JSON data from the URL
     $json_data = file_get_contents($url);
