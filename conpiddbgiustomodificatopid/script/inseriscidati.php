@@ -15,7 +15,7 @@ if ($conn->query($query) === TRUE) {
 }
 
     mysqli_close($conn);
-    file_get_contents("https://nicolaaliuni.altervista.org/irrigazione/fine.php");
+    file_get_contents("https://DOMINIO/irrigazione/fine.php");
   }
 
-?>
+?>
