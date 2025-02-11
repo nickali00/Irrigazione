@@ -1,2 +1,1 @@
-# Irrigazione
-Questo progetto implementa un sistema di irrigazione automatizzato basato su ESP32, con controllo tramite Bot Telegram e gestione dei dati via server PHP e database MySQL.
+Questo progetto implementa un sistema di irrigazione automatizzato basato su ESP32, con controllo PID per ottimizzare il consumo d'acqua. Il sistema può essere controllato in remoto tramite un Bot Telegram, mentre i dati vengono gestiti e memorizzati su un server PHP con database MySQL.
