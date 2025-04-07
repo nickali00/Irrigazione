@@ -1,5 +1,5 @@
 <?php
-$botToken = "7288651560:AAGZO2j_k7Ad7VRvVhbWNDjoxijZZiHGq7w";
+$botToken = "***";
 $website = "https://api.telegram.org/bot".$botToken;
 $chatID=442527310;
   include"connessioni.php";
@@ -84,7 +84,7 @@ $chatID=442527310;
                     $apiUrlai = 'https://openrouter.ai/api/v1/chat/completions';
                     $title = 'Nicola prova ai';
                     $input = $messaggioai; // Sostituire con l'input dell'utente
-                    $apiKeyai = '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'; // qwara
+                    $apiKeyai = 'sk-or-v1-***';
 
                     $userMessage = htmlspecialchars($_POST['user_message']); // Salva il messaggio dell'utente
 
@@ -178,4 +178,4 @@ function InviaMessaggio($chatID,$messaggio){
     $url = "$GLOBALS[website]/sendMessage?chat_id=$chatID&parse_mode=HTML&text=".urlencode($messaggio);
     file_get_contents($url);
 }
-?>
+?>
